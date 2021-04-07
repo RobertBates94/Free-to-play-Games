@@ -5,4 +5,5 @@ class Arrests
         @Category = Category
         @name = Name
         @Team_preffered_name = Team_preffered_name
+    end
 end
