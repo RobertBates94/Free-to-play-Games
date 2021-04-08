@@ -1,7 +1,7 @@
 class CLI
 
     def start
-        puts "Welcome to NFL arrest list! What's your name?"
+        puts "Welcome to a collection of free to play games! What's your name?"
         API.get_data
         input = user_input
         greet(input)
@@ -12,10 +12,12 @@ class CLI
     end
 
     def greet(name)
-        puts "Sup' #{name}! As it turns out, around 51% of all NFL players have been convicted
-        of some sort of crime. What do you think, do any of your favorite players make the list?
-            Type y to see a list of charges players have gotten convicted of, 
-            Type exit if you would like to exit my program."
+        puts "Sup' #{name}! Ever wanted to check all the free to play games available for your
+        specific console. Well here I have created a list that will pull up different game that are
+        free to play for the platform you choose with a description on what the game is like.
+        Hope you enjoy it!
+        To view a list of consoles to choose from just press Y.
+        To exit from my program type exit."
             menu
     end
 
@@ -32,8 +34,9 @@ class CLI
     end
 
     def goodbye
-        puts "Were you suprized by any of these? 
-        Thanks for spending some time on my project, have a good day!"
+        puts "See any games your intrested in?
+        If you find any games you enjoyed be sure to tweet about it... who knows, it make be the next
+        Fortnite or Apex Legends!"
     end
 
     def invalid
@@ -42,7 +45,7 @@ class CLI
     end
 
     def arrest_list
-        charges = ["Drugs", "DUI", "Theft"]
+        games = link
         charges.each.with_index(1) do |charge, index|
             puts "#{index}. #{charge}"
         end
