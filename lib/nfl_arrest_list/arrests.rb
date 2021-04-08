@@ -3,10 +3,10 @@ class Arrests
 
     @@all = []
     
-    def initialize(Category, Name, Team_preffered_name)
-        @Category = Category
-        @name = Name
-        @Team_preffered_name = Team_preffered_name
+    def initialize(category, name, team_preffered_name)
+        @category = category
+        @name = name
+        @team_preffered_name = team_preffered_name
     end
 
     def self.all
