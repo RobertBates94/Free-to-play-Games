@@ -2,6 +2,7 @@ class CLI
 
     def start
         puts "Welcome to NFL arrest list! What's your name?"
+        API.get_data
         input = user_input
         greet(input)
     end
@@ -45,6 +46,17 @@ class CLI
         charges.each.with_index(1) do |charge, index|
             puts "#{index}. #{charge}"
         end
+        select_charges
+    end
+
+    def select_charges
+        puts "Please enter the name of the charges you would like to see players convicted of."
+        selection = user_input
+        charges_details(selection)
+    end
+
+    def charges_details(charge)
+        puts "#{charge}"
     end
 
 end
