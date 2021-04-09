@@ -45,7 +45,6 @@ class CLI
     end
 
     def arrest_list
-        games = link
         charges.each.with_index(1) do |charge, index|
             puts "#{index}. #{charge}"
         end
