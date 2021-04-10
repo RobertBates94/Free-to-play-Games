@@ -24,8 +24,7 @@ class CLI
     def menu
         selection = user_input
         if selection == "y"
-            arrest_list
-            menu
+            print_games
         elsif selection == "exit"
             goodbye
         else
@@ -44,21 +43,45 @@ class CLI
         menu
     end
 
-    def arrest_list
-        charges.each.with_index(1) do |charge, index|
-            puts "#{index}. #{charge}"
+    def print_games
+        Games.all.each.with_index(1) do |game, index|
+            puts "#{index}. #{game.title}"
         end
-        select_charges
+        select_game
     end
 
-    def select_charges
-        puts "Please enter the name of the charges you would like to see players convicted of."
+    def select_game
+        puts "Please enter the name of the free to play game you would like to see."
         selection = user_input
-        charges_details(selection)
+        if Games.find_by_selection(selection)
+            game = Games.find_by_selection(selection)
+        else 
+            game = selection
+        end
+        game_details(game)
     end
 
-    def charges_details(charge)
-        puts "#{charge}"
+    def game_details(game)
+        if game == "exit"
+            goodbye
+        elsif game.class == Games
+        puts ""
+        puts "Name: #{game.title}"
+        puts ""
+        puts "------------------------------------------------"
+        puts ""
+        puts "Platform: #{game.platform}"
+        puts ""
+        puts "------------------------------------------------"
+        puts ""
+        puts "Short Description: #{game.short_description}"
+        puts ""
+        puts ""
+        puts "Enter Y to see more games or type exit to leave the program."
+        else
+            invalid
+        end
+
     end
 
 end

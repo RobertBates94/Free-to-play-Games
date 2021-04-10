@@ -1,5 +1,5 @@
 class Games
-    attr_accessor :platform, :title, :description
+    attr_accessor :platform, :title, :short_description
 
     @@all = []
     
@@ -16,6 +16,12 @@ class Games
 
     def save 
         @@all << self
+    end
+
+    def self.find_by_selection(game_title)
+        self.all.detect do |game|
+            game.title == game_title
+        end
     end
 
 end
