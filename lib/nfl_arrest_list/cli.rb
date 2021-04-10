@@ -30,6 +30,7 @@ class CLI
         else
             invalid
         end
+        
     end
 
     def goodbye
