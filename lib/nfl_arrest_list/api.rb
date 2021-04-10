@@ -22,7 +22,7 @@ link = JSON.parse(response.read_body)
     link.each do |games|
         Games.new(games)
     end
-    #binding.pry
+    
 end
 
 

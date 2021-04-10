@@ -1,5 +1,9 @@
 #!/usr/bin/env ruby
 
 require_relative '../lib/environment.rb'
+require 'dotenv/load'
+
+puts ENV[request["x-rapidapi-key"]]
+puts ENV[request["x-rapidapi-host"]]
 
 CLI.new.start
