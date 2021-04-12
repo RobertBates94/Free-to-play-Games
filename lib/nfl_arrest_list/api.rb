@@ -13,7 +13,7 @@ http.use_ssl = true
 http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 
 request = Net::HTTP::Get.new(url)
-request["x-rapidapi-key"] = '867d3746aamshc5cd5427e755571p165803jsnc13b1432949c'
+request["x-rapidapi-key"] = ENV["key"]
 request["x-rapidapi-host"] = 'free-to-play-games-database.p.rapidapi.com'
 
 response = http.request(request)
@@ -22,7 +22,7 @@ link = JSON.parse(response.read_body)
     link.each do |games|
         Games.new(games)
     end
-    
+
 end
 
 
