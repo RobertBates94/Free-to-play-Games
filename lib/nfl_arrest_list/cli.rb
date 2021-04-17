@@ -16,7 +16,7 @@ class CLI
         PC players. Well here I have created a list that will pull up different games that are
         free to play with a description on what the game is like."
         puts ""
-        puts "To view a list of consoles to choose from just press Y.
+        puts "To view a list of consoles to choose from just press y.
         To exit from my program type exit."
             menu
     end
@@ -78,11 +78,11 @@ class CLI
         puts "Short Description: #{game.short_description}"
         puts ""
         puts ""
-        puts "Enter Y to see more games or type exit to leave the program."
+        puts "Enter y to see more games or type exit to leave the program."
         else
             invalid
         end
-
+        menu
     end
 
 end
