@@ -18,7 +18,7 @@ class CLI
         puts ""
         puts "To view a list of consoles to choose from just press y.
         To exit from my program type exit."
-            menu
+        menu
     end
 
     def menu
@@ -30,7 +30,7 @@ class CLI
         else
             invalid
         end
-        
+
     end
 
     def goodbye
@@ -41,6 +41,7 @@ class CLI
 
     def invalid
         puts "I dont think thats what you meant to type, try that again."
+        puts "press y do see a list of games or exit to exit"
         menu
     end
 
@@ -56,6 +57,8 @@ class CLI
         selection = user_input
         if Games.find_by_selection(selection)
             game = Games.find_by_selection(selection)
+        elsif selection == "exit"
+            goodbye
         else 
             game = selection
         end
@@ -63,9 +66,7 @@ class CLI
     end
 
     def game_details(game)
-        if game == "exit"
-            goodbye
-        elsif game.class == Games
+        if game.class == Games
         puts ""
         puts "Name: #{game.title}"
         puts ""
@@ -79,10 +80,14 @@ class CLI
         puts ""
         puts ""
         puts "Enter y to see more games or type exit to leave the program."
+        elsif game == "exit"
+            goodbye
+        elsif game == "y"
+            print_games
         else
             invalid
         end
-        menu
+
     end
 
 end
