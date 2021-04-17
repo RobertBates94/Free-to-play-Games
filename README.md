@@ -1,6 +1,6 @@
-# NflArrestList
+# Free To Play Games
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/nfl_arrest_list`. To experiment with that code, run `bin/console` for an interactive prompt.
+Welcome to Free to Play games CLI
 
 TODO: Delete this and the text above, and describe your gem
 
