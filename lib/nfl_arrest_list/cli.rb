@@ -13,10 +13,10 @@ class CLI
 
     def greet(name)
         puts "Sup' #{name}! Ever wanted to check all the free to play games available for your
-        specific console. Well here I have created a list that will pull up different game that are
-        free to play for the platform you choose with a description on what the game is like.
-        Hope you enjoy it!
-        To view a list of consoles to choose from just press Y.
+        PC players. Well here I have created a list that will pull up different games that are
+        free to play with a description on what the game is like."
+        puts ""
+        puts "To view a list of consoles to choose from just press Y.
         To exit from my program type exit."
             menu
     end
