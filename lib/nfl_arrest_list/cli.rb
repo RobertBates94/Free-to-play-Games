@@ -16,7 +16,7 @@ class CLI
         PC players. Well here I have created a list that will pull up different games that are
         free to play with a description on what the game is like."
         puts ""
-        puts "To view a list of consoles to choose from just press y.
+        puts "To view a list of games to choose from just press y.
         To exit from my program type exit."
         menu
     end
@@ -41,7 +41,7 @@ class CLI
 
     def invalid
         puts "I dont think thats what you meant to type, try that again."
-        puts "press y do see a list of games or exit to exit"
+        puts "Press y to see a list of games or exit to leave the CLI."
         menu
     end
 
@@ -53,12 +53,13 @@ class CLI
     end
 
     def select_game
+        puts ""
         puts "Please enter the name of the free to play game you would like to see."
         selection = user_input
         if Games.find_by_selection(selection)
             game = Games.find_by_selection(selection)
         elsif selection == "exit"
-            goodbye
+            game = goodbye
         else 
             game = selection
         end
@@ -81,13 +82,12 @@ class CLI
         puts ""
         puts "Enter y to see more games or type exit to leave the program."
         elsif game == "exit"
-            goodbye
+            game = goodbye
         elsif game == "y"
-            print_games
+            game = print_games
         else
             invalid
         end
-
+        menu
     end
-
 end
