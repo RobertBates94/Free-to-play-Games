@@ -1,8 +1,10 @@
 # Free To Play Games
 
-Welcome to Free to Play games CLI
-
-TODO: Delete this and the text above, and describe your gem
+Welcome to Free to Play games CLI! This CLI will show you a list of all the free to play games
+that are available for PC players. Once you choose a game you are intrested in you can type the
+name of that free to play game and it will give you a short description on the game. Finally you can 
+return back to the menu and choose another game you would like to view until you find what sounds
+best for you.
 
 ## Installation
 
