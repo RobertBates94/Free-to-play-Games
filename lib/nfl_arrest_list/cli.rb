@@ -12,7 +12,7 @@ class CLI
     end
 
     def greet(name)
-        puts "Sup' #{name}! Ever wanted to check all the free to play games available for your
+        puts "Sup' #{name}! Ever wanted to check out all the free to play games available for
         PC players. Well here I have created a list that will pull up different games that are
         free to play with a description on what the game is like."
         puts ""
@@ -34,8 +34,9 @@ class CLI
     end
 
     def goodbye
-        puts "See any games your intrested in?
-        If you find any games you enjoyed be sure to tweet about it... who knows, it make be the next
+        puts "See any games your intrested in?"
+        puts ""
+        puts "If you find any games you enjoyed be sure to tweet about it... who knows, it make be the next
         Fortnite or Apex Legends!"
     end
 
@@ -56,18 +57,17 @@ class CLI
         puts ""
         puts "Please enter the name of the free to play game you would like to see."
         selection = user_input
-        if Games.find_by_selection(selection)
+        if selection == "exit"
+            goodbye
+        elsif Games.find_by_selection(selection)
             game = Games.find_by_selection(selection)
-        elsif selection == "exit"
-            game = goodbye
+            game_details(game)
         else 
-            game = selection
+            puts "invalid try again"
+            select_game
         end
-        game_details(game)
     end
-
     def game_details(game)
-        if game.class == Games
         puts ""
         puts "Name: #{game.title}"
         puts ""
@@ -81,13 +81,6 @@ class CLI
         puts ""
         puts ""
         puts "Enter y to see more games or type exit to leave the program."
-        elsif game == "exit"
-            game = goodbye
-        elsif game == "y"
-            game = print_games
-        else
-            invalid
-        end
         menu
     end
 end
